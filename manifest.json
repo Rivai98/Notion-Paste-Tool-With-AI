@@ -1,0 +1,81 @@
+{
+  "manifest_version": 3,
+  "name": "AI Content Writer & Notion Paste",
+  "description": "Generate content with AI and seamlessly paste it into Notion pages. Uses OpenAI GPT for intelligent content creation.",
+  "version": "1.0.0",
+  "author": "AI Content Writer Team",
+  
+  "icons": {
+    "16": "icons/icon-16.svg",
+    "32": "icons/icon-32.svg",
+    "48": "icons/icon-48.svg",
+    "128": "icons/icon-128.svg"
+  },
+
+    "permissions": [    "activeTab",    "storage",    "scripting",    "tabs"  ],
+
+  "host_permissions": [
+    "https://*.notion.so/*",
+    "https://*.notion.site/*",
+    "https://api.openai.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.notion.so/*",
+        "https://*.notion.site/*"
+      ],
+      "js": ["content/content-script.js"],
+      "css": ["content/content-styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AI Content Writer",
+    "default_icon": {
+      "16": "icons/icon-16.svg",
+      "32": "icons/icon-32.svg",
+      "48": "icons/icon-48.svg",
+      "128": "icons/icon-128.svg"
+    }
+  },
+
+  "options_page": "options.html",
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Open AI content generator"
+    },
+    "paste_last_content": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Paste last generated content"
+    }
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*",
+        "utils/*"
+      ],
+      "matches": [
+        "https://*.notion.so/*",
+        "https://*.notion.site/*"
+      ]
+    }
+  ]
+} 

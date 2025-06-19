@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main central star -->
+  <path d="M24 3L26.18 18.51L42 19.5L26.18 20.49L24 36L21.82 20.49L6 19.5L21.82 18.51L24 3Z" fill="#667eea" stroke="#5a67d8" stroke-width="0.5"/>
+  
+  <!-- Top right sparkle -->
+  <path d="M37.5 9L38.73 16.11L46.5 16.5L38.73 16.89L37.5 24L36.27 16.89L28.5 16.5L36.27 16.11L37.5 9Z" fill="#764ba2" stroke="#6b46c1" stroke-width="0.3"/>
+  
+  <!-- Bottom left sparkle -->
+  <path d="M10.5 30L11.73 37.11L19.5 37.5L11.73 37.89L10.5 45L9.27 37.89L1.5 37.5L9.27 37.11L10.5 30Z" fill="#9333ea" stroke="#7c3aed" stroke-width="0.3"/>
+  
+  <!-- Medium sparkles -->
+  <path d="M36 30L36.6 33.6L41 34L36.6 34.4L36 38L35.4 34.4L31 34L35.4 33.6L36 30Z" fill="#fbbf24"/>
+  <path d="M12 12L12.6 15.6L17 16L12.6 16.4L12 20L11.4 16.4L7 16L11.4 15.6L12 12Z" fill="#10b981"/>
+  
+  <!-- Small accent dots -->
+  <circle cx="39" cy="39" r="1.5" fill="#ef4444"/>
+  <circle cx="9" cy="9" r="1.2" fill="#06b6d4"/>
+  <circle cx="42" cy="6" r="1" fill="#f59e0b"/>
+  <circle cx="6" cy="42" r="1" fill="#ec4899"/>
+  
+  <!-- Tiny sparkles -->
+  <circle cx="30" cy="12" r="0.8" fill="#a78bfa"/>
+  <circle cx="18" cy="36" r="0.8" fill="#34d399"/>
+</svg> 

@@ -1,0 +1,572 @@
+/* AI Content Writer Extension - Content Script Styles */
+
+/* Floating AI Button */
+.ai-content-writer-floating-btn {
+  position: fixed;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  backdrop-filter: blur(10px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.ai-content-writer-floating-btn.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ai-content-writer-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ai-content-writer-floating-btn:active {
+  transform: scale(0.95);
+}
+
+/* Positioning classes */
+.ai-content-writer-floating-btn.bottom-right {
+  bottom: 30px;
+  right: 30px;
+}
+
+.ai-content-writer-floating-btn.bottom-left {
+  bottom: 30px;
+  left: 30px;
+}
+
+.ai-content-writer-floating-btn.top-right {
+  top: 30px;
+  right: 30px;
+}
+
+.ai-content-writer-floating-btn.top-left {
+  top: 30px;
+  left: 30px;
+}
+
+.ai-btn-icon {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.ai-btn-text {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Content Generator Modal */
+.ai-content-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.ai-content-modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ai-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.ai-modal-content {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.ai-content-modal.visible .ai-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.ai-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+}
+
+.ai-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.ai-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.ai-modal-close:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.ai-modal-body {
+  padding: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.ai-form-group {
+  margin-bottom: 20px;
+}
+
+.ai-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.ai-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ai-form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.ai-templates {
+  margin-bottom: 20px;
+}
+
+.ai-templates label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.ai-template-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ai-template-btn {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-template-btn:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.ai-template-btn:active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.ai-settings-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ai-setting {
+  flex: 1;
+}
+
+.ai-setting label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 13px;
+}
+
+.ai-setting select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 13px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.ai-setting select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.ai-generated-content {
+  margin-top: 20px;
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+}
+
+.ai-generated-content label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.ai-content-preview {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ai-modal-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  background: #f8f9fa;
+}
+
+.ai-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ai-btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.ai-btn-primary:hover:not(:disabled) {
+  background: #5a6fd8;
+}
+
+.ai-btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.ai-btn-success:hover:not(:disabled) {
+  background: #218838;
+}
+
+.ai-btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.ai-btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.ai-loading-spinner {
+  display: inline-block;
+  animation: ai-spin 1s linear infinite;
+  font-size: 16px;
+}
+
+@keyframes ai-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* In-page Notifications */
+.ai-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  background: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #667eea;
+  max-width: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.ai-notification.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.ai-notification-success {
+  border-left-color: #28a745;
+  color: #155724;
+}
+
+.ai-notification-warning {
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+.ai-notification-error {
+  border-left-color: #dc3545;
+  color: #721c24;
+}
+
+.ai-notification-info {
+  border-left-color: #17a2b8;
+  color: #0c5460;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .ai-modal-content {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .ai-modal-header {
+    background: #374151;
+    border-bottom-color: #4a5568;
+  }
+  
+  .ai-modal-header h3 {
+    color: #e2e8f0;
+  }
+  
+  .ai-modal-close {
+    color: #a0aec0;
+  }
+  
+  .ai-modal-close:hover {
+    background: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .ai-form-group textarea {
+    background: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .ai-form-group textarea:focus {
+    border-color: #667eea;
+  }
+  
+  .ai-template-btn {
+    background: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .ai-template-btn:hover {
+    background: #4a5568;
+  }
+  
+  .ai-setting select {
+    background: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .ai-content-preview {
+    background: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .ai-modal-footer {
+    background: #374151;
+    border-top-color: #4a5568;
+  }
+  
+  .ai-notification {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .ai-form-group label,
+  .ai-templates label,
+  .ai-setting label,
+  .ai-generated-content label {
+    color: #e2e8f0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ai-modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .ai-settings-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ai-template-buttons {
+    justify-content: center;
+  }
+  
+  .ai-modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ai-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .ai-content-writer-floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .ai-btn-icon {
+    font-size: 20px;
+  }
+  
+  .ai-btn-text {
+    font-size: 9px;
+  }
+}
+
+/* Accessibility improvements */
+.ai-content-writer-floating-btn:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+.ai-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.ai-form-group textarea:focus,
+.ai-setting select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ai-content-writer-floating-btn {
+    background: #000;
+    border: 2px solid #fff;
+  }
+  
+  .ai-modal-content {
+    border: 2px solid #000;
+  }
+  
+  .ai-btn-primary {
+    background: #000;
+    border: 2px solid #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ai-content-writer-floating-btn,
+  .ai-content-modal,
+  .ai-modal-content,
+  .ai-notification,
+  .ai-btn,
+  .ai-template-btn {
+    transition: none;
+  }
+  
+  .ai-loading-spinner {
+    animation: none;
+  }
+} 

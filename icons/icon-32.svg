@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main central star -->
+  <path d="M16 2L17.45 12.34L28 13L17.45 13.66L16 24L14.55 13.66L4 13L14.55 12.34L16 2Z" fill="#667eea"/>
+  
+  <!-- Top right sparkle -->
+  <path d="M25 6L25.82 10.74L31 11L25.82 11.26L25 16L24.18 11.26L19 11L24.18 10.74L25 6Z" fill="#764ba2"/>
+  
+  <!-- Bottom left sparkle -->
+  <path d="M7 20L7.82 24.74L13 25L7.82 25.26L7 30L6.18 25.26L1 25L6.18 24.74L7 20Z" fill="#9333ea"/>
+  
+  <!-- Small accent sparkles -->
+  <circle cx="24" cy="20" r="1.5" fill="#fbbf24"/>
+  <circle cx="8" cy="8" r="1" fill="#10b981"/>
+  <circle cx="26" cy="26" r="1" fill="#ef4444"/>
+</svg> 
