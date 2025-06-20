@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener(async () => {
   
   if (!settings.geminiApiKey) {
     await chrome.storage.local.set({
-      geminiApiKey: 'AIzaSyALcryunSpz4q3DQTewbSkr3Y0xOtnamh8',
+      geminiApiKey: ' ',
       aiModel: 'gemini-2.0-flash',
       maxTokens: 1500,
       temperature: 0.7,

@@ -317,7 +317,7 @@ function logUsageMetrics(response) {
 
 ## 🎯 **Your Current Configuration**
 
-- **API Key**: `AIzaSyALcryunSpz4q3DQTewbSkr3Y0xOtnamh8` ✅
+- **API Key**: `` ✅
 - **Default Model**: `gemini-2.0-flash` ⚡
 - **Max Tokens**: 1500 📝
 - **Temperature**: 0.7 🎨

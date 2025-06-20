@@ -4,7 +4,7 @@
 
 **From:** OpenAI GPT Models  
 **To:** Google Gemini 2.0 Flash API  
-**API Key:** `AIzaSyALcryunSpz4q3DQTewbSkr3Y0xOtnamh8`  
+**API Key:** ``  
 **Model:** `gemini-2.0-flash` (Latest & Fastest)
 
 ## ✅ **What Was Updated:**

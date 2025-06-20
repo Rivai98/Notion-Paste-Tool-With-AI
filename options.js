@@ -3,7 +3,7 @@
 class OptionsManager {
   constructor() {
     this.settings = {};
-            this.defaultSettings = {      geminiApiKey: 'AIzaSyALcryunSpz4q3DQTewbSkr3Y0xOtnamh8',      aiModel: 'gemini-2.0-flash',
+            this.defaultSettings = {      geminiApiKey: '',      aiModel: 'gemini-2.0-flash',
       maxTokens: 1500,
       temperature: 0.7,
       notionIntegration: true,
